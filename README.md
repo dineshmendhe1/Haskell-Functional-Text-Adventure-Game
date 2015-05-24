@@ -1,6 +1,8 @@
 =================================================================================================================
 AUTHOR => DINESH MENDHE
- 										 ||Story of the Game||
+
+
+ 										                               ||Story of the Game||
                      ----------------------------------------------------------------
                      The player has lost his Satellite phone on Marooned Island.On the
                      iseland there is Haunted House, Castle, two  caves, Lake,  Hill,
