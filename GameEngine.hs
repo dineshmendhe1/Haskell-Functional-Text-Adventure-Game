@@ -1,3 +1,14 @@
+import GameState
+import Item
+import Location
+import Player
+import World
+import NavMatrix
+import Data.Char
+import System.IO
+
+
+
 --- introduction of game
 type Story = String 
 story:: Story
@@ -49,3 +60,31 @@ main = do
 --newState <- customizationState
 --print_state newState 0
 	displayOutro
+
+-- Making GameState instance of Show typeclass
+instance Show GameState where
+	show (GameState player world) = " \n "++(show player)++""++(show  world)
+	
+
+-- Making Item instance of Show typeclass
+instance Show Item where
+	show (Item name desc) = (name)
+
+-- Making World instance of Show typeclass 
+instance Show World where
+	show (World name desc locs)= " World => "++name
+	
+
+-- Making Location instace of Show typeclass 					
+instance Show Location where
+	show(Location name desc content) = "\n Location => "++(show name)++" Description => "++(show desc) ++" Contents => "++item where
+		item = case content of Nothing  -> ""
+ 		                       (Just i) -> show content
+
+	
+	
+-- Making Player instance of Show typeclass               
+instance Show Player where
+	show(Player name presentLocation inventory)= "\n Player => "++name++item where
+		item = case inventory of Nothing  -> ""
+ 		                         (Just i) -> " Inventory => "++(concat $ fmap show i)
